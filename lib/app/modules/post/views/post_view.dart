@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 
 import '../controllers/post_controller.dart';
 
-class PostView extends StatelessWidget {
-  final PostController postController = Get.put(PostController());
+class PostView extends GetView<PostController> {
+  const PostView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Obx(() {
@@ -17,7 +17,7 @@ class PostView extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              for (var post in postController.postList)
+              for (var post in controller.postList)
                 Container(
                   width: MediaQuery.of(context).size.width,
                   // margin: const EdgeInsets.only(top: 10),

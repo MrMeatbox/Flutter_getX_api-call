@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/routes.dart';
 import '../../second/views/second_view.dart';
 import '../../user/views/user_view.dart';
 import '../controllers/counter_controller.dart';
@@ -13,7 +14,7 @@ class CounterView extends GetView<CounterController> {
     return Obx(() {
       return Scaffold(
         floatingActionButton: FloatingActionButton(onPressed: () {
-          Get.to(() => UserView());
+          Get.toNamed(Routes.user);
         }),
         appBar: AppBar(
           title: const Text('CounterView'),
